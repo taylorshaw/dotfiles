@@ -1,67 +1,73 @@
+# ANSI TERMINAL ESCAPE CODES
 
 # XXX - should these all be prefixed by somethin to avoid naming conficts??
 
-setenv ESC  `echo e | tr e '\033'`
+set ESC = `echo e | tr e '\033'`
 
 
-setenv NONE  	       	    "${ESC}[0m"   # no attrs defined 
-setenv BOLD    	   	    "${ESC}[1m"   
-#setenv FAINT    	    "${ESC}[2m"    # doesnt work
-setenv NORMAL  	   	    "${ESC}[22m"   # not bold 
-#setenv ITALIC     	    "${ESC}[3m"   #  doesnt work
-setenv ULINE	   	    "${ESC}[4m"  
-setenv NO_ULINE             "${ESC}[24m"  
-#setenv ULINE2	   	    "${ESC}[21m"  # double underline?  doesnt work!
-setenv BLINK	   	    "${ESC}[5m"  
-setenv REVERSE	   	    "${ESC}[7m"
-setenv CONCEAL	   	    "${ESC}[8m"
-#setenv STHRU	   	    "${ESC}[9m"   #strikethru    doesnt work
+set NONE = 	       	    "${ESC}[0m"   # no attrs defined 
+set BOLD =    	   	    "${ESC}[1m"   
+set FAINT =    	            "${ESC}[2m"   
+set NORMAL =  	   	    "${ESC}[22m"   # not bold 
+#set ITALIC =     	    "${ESC}[3m"   #  doesnt work
+set ULINE =	   	    "${ESC}[4m"  
+set NO_ULINE =             "${ESC}[24m"  
+#set ULINE2 =	   	    "${ESC}[21m"  # double underline?  doesnt work!
+set BLINK =	   	    "${ESC}[5m"
+set REVERSE =	   	    "${ESC}[7m"
+set CONCEAL =	   	    "${ESC}[8m"
+#set STHRU =	   	    "${ESC}[9m"   #strikethru    doesnt work
 
-#setenv FRAMED    	    "${ESC}[51m"   
-#setenv CIRCLED    	    "${ESC}[52m"
-#setenv OVERLINE    	    "${ESC}[53m"      
+#set FRACTUR =		    "${ESC}[20m" # doesnt work
+set COLOR256 =    	    "${ESC}[38;5;" # need to add 'm' like: ${COLOR256}123m 
+#set COLORRGB =              "${ESC}[38;2;" # doesnt work
+
+#set FRAMED =    	    "${ESC}[51m"  # doesnt work
+#set CIRCLED =   	    "${ESC}[52m"  # doesnt work
+#set OVERLINE =    	    "${ESC}[53m"  # doesnt work
 
 # colors 
-setenv BLACK		    "${ESC}[30m"  
-setenv RED		    "${ESC}[31m"  
-setenv GREEN	   	    "${ESC}[32m"  
-setenv YELLOW	   	    "${ESC}[33m"  
-setenv BLUE		    "${ESC}[34m"  
-setenv MAGENTA	   	    "${ESC}[35m"  
-setenv CYAN		    "${ESC}[36m"  
-setenv WHITE	   	    "${ESC}[37m"  
+set BLACK =		    "${ESC}[30m"  
+set RED =		    "${ESC}[31m"  
+set GREEN =	   	    "${ESC}[32m"  
+set YELLOW =	   	    "${ESC}[33m"  
+set BLUE =		    "${ESC}[34m"  
+set MAGENTA =	   	    "${ESC}[35m"  
+set CYAN =		    "${ESC}[36m"  
+set WHITE =	   	    "${ESC}[37m"  
 
 # bright colors
-setenv GRAY		    "${ESC}[90m"  
-setenv BR_RED	   	    "${ESC}[91m"  
-setenv BR_GREEN	   	    "${ESC}[92m"  
-setenv BR_YELLOW 	    "${ESC}[93m"  
-setenv BR_BLUE	   	    "${ESC}[94m"  
-setenv BR_MAGENTA  	    "${ESC}[95m"  
-setenv BR_CYAN	   	    "${ESC}[96m"  
-setenv BR_WHITE	   	    "${ESC}[97m"  
+set GRAY =		    "${ESC}[90m"  
+set BR_RED =	   	    "${ESC}[91m"  
+set BR_GREEN =	   	    "${ESC}[92m"  
+set BR_YELLOW = 	    "${ESC}[93m"  
+set BR_BLUE =	   	    "${ESC}[94m"  
+set BR_MAGENTA =  	    "${ESC}[95m"  
+set BR_CYAN =	   	    "${ESC}[96m"  
+set BR_WHITE =	   	    "${ESC}[97m"  
 
 
 # bg colors 
-setenv BG_BLACK	            "${ESC}[40m"  
-setenv BG_RED	   	    "${ESC}[41m"  
-setenv BG_GREEN	   	    "${ESC}[42m"  
-setenv BG_YELLOW	    "${ESC}[43m"  
-setenv BG_BLUE	   	    "${ESC}[44m"  
-setenv BG_MAGENTA	    "${ESC}[45m"  
-setenv BG_CYAN	   	    "${ESC}[46m"  
-setenv BG_WHITE	   	    "${ESC}[47m"  
+set BG_BLACK =	            "${ESC}[40m"  
+set BG_RED =	   	    "${ESC}[41m"  
+set BG_GREEN =	   	    "${ESC}[42m"  
+set BG_YELLOW = 	    "${ESC}[43m"  
+set BG_BLUE =	   	    "${ESC}[44m"  
+set BG_MAGENTA =	    "${ESC}[45m"  
+set BG_CYAN =	   	    "${ESC}[46m"  
+set BG_WHITE =	   	    "${ESC}[47m"  
 
 
-#setenv SUBSCRIPT    	    "${ESC}[48m"   
-#setenv SUPERSCRIPT    	    "${ESC}[49m"   
+#set SUBSCRIPT =    	    "${ESC}[48m"   # doesnt work
+#set SUPERSCRIPT =    	    "${ESC}[49m"   # doesnt work
 
 
 # cursor positioning (there are more of these...)
-setenv CURSOR_SAVE	    "${ESC}[s"
-setenv CURSOR_RESTORE	    "${ESC}[u"
-setenv CURSOR_UP	    "${ESC}[a"
-setenv CURSOR_DOWN	    "${ESC}[b"
-setenv CURSOR_RIGHT	    "${ESC}[c"
-setenv CURSOR_LEFT	    "${ESC}[d"
+set CURSOR_SAVE	=           "${ESC}[s"
+set CURSOR_RESTORE =	    "${ESC}[u"
+set CURSOR_UP = 	    "${ESC}[a"
+set CURSOR_DOWN = 	    "${ESC}[b"
+set CURSOR_RIGHT =	    "${ESC}[c"
+set CURSOR_LEFT =	    "${ESC}[d"
 
+unset ESC

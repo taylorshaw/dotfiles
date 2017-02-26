@@ -1,7 +1,7 @@
 
 setenv DOTDIR ~/.dotfiles
 
-# cursor color-manipulation env variables
+# cursor color-manipulation variables
 source ${DOTDIR}/cursor
 
 # path stuff
@@ -13,21 +13,23 @@ setenv EDITOR /usr/bin/emacs
 setenv PAGER /usr/bin/less
 
 
-
-
-# tcsh settings
+# set some tcsh settings
 if($?tcsh) then
 
    set autolist
-   set nobeep
    set autocorrect
-   set noclobber # ensure >> redirections dont destroy existing files
-   # set autocomplete
+   # set autocomplete	
+   unset autologout # make sure we dont log out or lock term after inactivity
+   set autorehash # rehashes whenever a command is not found
+   set color	     
    set fignore = ( .o \~ ) # ignore these files in completions? does this work? XXX
 
-   unset autologout
+   set globstar # (can use ** to recursively glob directories (ls /usr/include/**/*.h)
+   
+   set nobeep
+   
+   set noclobber # ensure >> redirections dont destroy existing files
 
-   set color
 
    # set up prompt stuffs	
    set P_COLOR = ${BR_MAGENTA}
@@ -41,6 +43,8 @@ if($?tcsh) then
    # empty prompt for foreach and while loops
    set prompt2
    
+   unset P_COLOR
+
 endif
 
 # aliases
@@ -61,9 +65,10 @@ alias dreamhost 'ssh taylorshaw@www.taylorshaw.net'
 alias camsite 'ssh cameronshow@www.cameronshawfilm.com'
 
 # i used to specify -a <path to Preview.app> but i dont thin i need it
+# this turns man pages into pdf docs
 alias pman 'man -t \!* | pstopdf -i -o /tmp/\!*.man.pdf; open /tmp/\!*.man.pdf;'
 
-alias s echo youre not at work dummy
+alias s echo Youre not at work dummy!
 
 
 # ls stuff
@@ -77,7 +82,7 @@ if(`where gls` != "") then
    set lscmd = gls
    set lsopts = '--color=auto'
 
-   # XXX add custom dircolors
+   # XXX add custom dircolors XXX check these
    eval `gdircolors -c ${DOTDIR}/dircolors`
    
 endif
@@ -90,3 +95,9 @@ alias lt '$lscmd $lsopts -ltr'
 
 
 # completions
+
+
+# python stuff
+#setenv PYTHONSTARTUP ~/usr/bin/python_startup.py
+setenv PYTHONPATH ~/bin
+
