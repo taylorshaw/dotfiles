@@ -1,0 +1,14 @@
+# more gitignore examples at https://github.com/github/gitignore
+# install global gitignore file with
+# git config --global core.excludesfile ~/.gitignore
+
+# emacs-generated files
+*~ 
+\#*
+
+# C++ object and libs
+*.o
+*.a
+
+# OSX Stuff
+.DS_Store

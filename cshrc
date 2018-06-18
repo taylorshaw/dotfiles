@@ -59,7 +59,8 @@ alias last 'history | grep \!*'
 alias hi history
 alias m more
 
-alias xe 'touch \!*; emacs \!*' # XXX change to open emacs window
+# alias xe 'test \! -f \!* && touch \!*; emacs \!* &' # XXX change to open emacs window
+alias xe 'emacs \!* &'
 
 alias dreamhost 'ssh taylorshaw@www.taylorshaw.net'
 alias camsite 'ssh cameronshow@www.cameronshawfilm.com'

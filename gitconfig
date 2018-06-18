@@ -1,0 +1,14 @@
+[user]
+	name = Taylor Shaw
+	email = taylor@taylorshaw.net
+[credential]
+	helper = osxkeychain
+[color]
+	ui = auto
+	branch = auto
+	status = auto
+	diff = false
+[core]
+	editor = emacs
+	excludesfile = ~/.gitignore
+
