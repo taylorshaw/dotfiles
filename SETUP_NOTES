@@ -1,0 +1,41 @@
+FILES TO SYMLINK
+cshrc
+gitconfig
+gitignore
+
+
+SHELL
+Set default shell to tcsh
+increase default key repeat
+Create profile (black background, font is Menlo Regular 13pt for now)
+brew install coreutils to get gnu versions of unix tools (gnu ls has better terminal coloring) these will be prefixed with 'g' ie 'gls'
+
+
+
+EMACS
+# set up to start client on login
+brew in
+
+GIT
+
+
+HOMEBREW
+brew install emacs
+brew services start emacs # start emacs --daemon on login
+Other brew things installed:
+ack		gdbm		openexr		python@2	sqlite
+coreutils	ilmbase		openssl		readline	stow
+emacs		libyaml		pkg-config	ruby		tcsh
+figlet		mercurial	python		scons		wget
+
+
+
+
+PYTHON
+pip install virtualenv
+
+for facebook downloading:
+pip install requests
+virtualenv facebookenv
+source facebookenv/bin/activate.csh
+pip install -e git+https://github.com/mobolic/facebook-sdk.git#egg=facebook-sdk

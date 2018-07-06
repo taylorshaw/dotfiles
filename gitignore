@@ -6,9 +6,29 @@
 *~ 
 \#*
 
-# C++ object and libs
+# C++ objects, libs and prerequisites
 *.o
 *.a
+*.so
+*.dylib
+*.dll
+*.d
+
+# Qt Stuff
+*.moc
+moc_*.cpp
+moc_*.h
+
+# Python stuff
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Scons stuff
+.sconsign.dblite
 
 # OSX Stuff
 .DS_Store
+
+# compiled apps
+*.app

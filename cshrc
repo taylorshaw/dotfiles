@@ -8,9 +8,14 @@ source ${DOTDIR}/cursor
 setenv PATH ${PATH}:${HOME}/bin
 
 
-setenv VISUAL /usr/bin/emacs
-setenv EDITOR /usr/bin/emacs
+
+setenv VISUAL '/usr/local/bin/emacs' # the homebrew version 
+setenv EDITOR '/usr/local/bin/emacs'
+#setenv VISUAL /usr/bin/emacs
+#setenv EDITOR /usr/bin/emacs
+
 setenv PAGER /usr/bin/less
+
 
 
 # set some tcsh settings
@@ -60,12 +65,17 @@ alias hi history
 alias m more
 
 # alias xe 'test \! -f \!* && touch \!*; emacs \!* &' # XXX change to open emacs window
-alias xe 'emacs \!* &'
+alias emacs 'emacs -geometry 80x65 \!* &'
+alias xe 'emacs -geometry 80x65 \!* &'
+alias xe_term 'emacs -nw'
+alias emacs_term 'emacs -nw'
 
+
+# websites
 alias dreamhost 'ssh taylorshaw@www.taylorshaw.net'
 alias camsite 'ssh cameronshow@www.cameronshawfilm.com'
 
-# i used to specify -a <path to Preview.app> but i dont thin i need it
+# i used to specify -a <path to Preview.app> but i dont think i need it
 # this turns man pages into pdf docs
 alias pman 'man -t \!* | pstopdf -i -o /tmp/\!*.man.pdf; open /tmp/\!*.man.pdf;'
 
@@ -100,5 +110,5 @@ alias lt '$lscmd $lsopts -ltr'
 
 # python stuff
 #setenv PYTHONSTARTUP ~/usr/bin/python_startup.py
-setenv PYTHONPATH ~/bin
+#setenv PYTHONPATH ~/bin
 
