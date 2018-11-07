@@ -2,7 +2,9 @@ FILES TO SYMLINK
 cshrc
 gitconfig
 gitignore
-
+emacs.el
+emacs.d
+emacs-custom.el
 
 SHELL
 Set default shell to tcsh

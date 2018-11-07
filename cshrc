@@ -1,5 +1,5 @@
 
-setenv DOTDIR ~/.dotfiles
+setenv DOTDIR ~/personal/dotfiles
 
 # cursor color-manipulation variables
 source ${DOTDIR}/cursor
@@ -9,10 +9,10 @@ setenv PATH ${PATH}:${HOME}/bin
 
 
 
-setenv VISUAL '/usr/local/bin/emacs' # the homebrew version 
-setenv EDITOR '/usr/local/bin/emacs'
-#setenv VISUAL /usr/bin/emacs
-#setenv EDITOR /usr/bin/emacs
+#setenv VISUAL '/usr/local/bin/emacs' # the homebrew version 
+#setenv EDITOR '/usr/local/bin/emacs'
+setenv VISUAL /usr/bin/emacs
+setenv EDITOR /usr/bin/emacs
 
 setenv PAGER /usr/bin/less
 
