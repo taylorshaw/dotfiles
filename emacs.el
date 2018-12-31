@@ -127,7 +127,12 @@
 ;;  :config
 ;;  (projectile-global-mode))
 
-;;(use-package neotree)
+(use-package neotree
+  :config
+  (require 'neotree)
+  (setq neo-smart-open t)
+  (global-set-key [f8] 'neotree-toggle)
+  )
   
 
 ;; minimap seems to work better than sublimity for minimap, but still doesnt
@@ -180,6 +185,16 @@
 (setq c-default-style "linux")
 ;;(setq cperl-indent-level tab-width)
 ;;(setq lua-indent-level 2)
+
+;; show current functon in modeline
+(which-function-mode)
+(setq which-func-unknown "")
+(setq-default header-line-format
+              '((which-func-mode ("" which-func-format " "))))
+(setq mode-line-misc-info
+      ;; We remove Which Function Mode from the mode line
+      (assq-delete-all 'which-func-mode mode-line-misc-info))
+
 
 
 ;; comment region
