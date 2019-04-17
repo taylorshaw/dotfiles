@@ -5,6 +5,7 @@ gitignore
 emacs.el
 emacs.d
 emacs-custom.el
+bash_aliases (sourced from work .bashrc)
 
 SHELL
 Set default shell to tcsh
