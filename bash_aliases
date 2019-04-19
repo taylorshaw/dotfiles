@@ -1,7 +1,7 @@
 
 # some env vars
-export VISUAL="/usr/bin/emacs"
-export EDITOR="/usr/bin/emacs"
+export VISUAL="/usr/local/bin/emacs"
+export EDITOR="/usr/local/bin/emacs"
 export PAGER="/usr/bin/less"
 
 # aliases 
@@ -14,11 +14,11 @@ alias last='history | grep $1'
 alias hi='history'
 alias m='more'
 
-
-emacs() { /usr/bin/emacs "$@" & }
-alias xe='emacs'
-alias emacsterm="/usr/bin/emacs -nw"
-alias xet="/usr/bin/emacs -nw"
+emacs() { /usr/local/bin/emacs "$@" & }
+emacsclient() { /usr/local/bin/emacsclient -a '' -c -q "$@" & }
+alias xe='emacsclient'
+alias emacsterm="/usr/local/bin/emacs -nw"
+alias xet="/usr/local/bin/emacsclient -a '' --tty"
 
 alias av='cd ~/av'
 
@@ -59,6 +59,9 @@ alias log_dump='~/av/bazel-bin/common/logging/log_dump --summary_only --log_id '
 # gcolor2
 # libreoffice
 # perf (via linux-tools-common also linux-tools-generic and linus-cloud-tools-generic)
+# sqlite3
+# sqliteman
+# sqlitebrowser
 
 # notify-send to send myself a desktop notification on ubuntu
 # notify-send 'hello' 'this is a test' -i face-monkey -u critical

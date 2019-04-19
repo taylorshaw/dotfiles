@@ -2,7 +2,6 @@ FILES TO SYMLINK
 cshrc
 gitconfig
 gitignore
-emacs.el
 emacs.d
 emacs-custom.el
 bash_aliases (sourced from work .bashrc)
