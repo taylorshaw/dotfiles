@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: taylor
+# key: taylor
+# --
+Taylor is "${1:$$(yas-choose-value '("great" "awesome" "neato"))}"
+
+The string is "${1:$(downcase yas-text)}"

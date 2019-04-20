@@ -18,9 +18,34 @@
 ;; https://emacs-doctor.com/emacs-strip-tease.html
 ;; https://github.com/ClintLiddick/dotfiles/blob/master/emacs.el (clint from aurora's dotfiles)
 
-;; TODO set up helm ?
-;; TODO set up projectile ?
-;; TODO set up yasnippet ?
+;; TODO
+
+;; set up helm ?
+;; set up projectile ?
+;; set up yasnippet ?  maybe integrate with helm and ido?
+;; auto-complete https://github.com/auto-complete/auto-complete
+;; https://www.emacswiki.org/emacs/HippieExpand
+;; magit
+;; rtags/ycmd
+
+;; try emacs prelude, spacemacs etc
+;; evil-mode
+
+;; http://pchristensen.com/blog/articles/finding-things-fast-in-emacs/
+;; https://github.com/eglaysher/find-things-fast/blob/master/README.md
+
+
+;; Something to automatically put copyright at top of all new code files
+
+;; Try using desktop-save-mode to restore buffers and window configuration
+;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Saving-Emacs-Sessions.html
+
+;; flymake mode
+
+
+;; also, can switch this file to org mode for built-in documentation
+
+
 
 ;;; Code:
 
@@ -105,7 +130,7 @@
 ;;  (add-hook 'c-mode-common-hook
 ;;	    (function (lambda ()
 ;;			(add-hook 'before-save-hook
-;;				  'clang-format-buffer))))
+  ;;				  'clang-format-buffer))))
   )
 
 
@@ -168,8 +193,11 @@
   ;;(sublimity-map-set-delay 5)
 ;;  )
 
+(use-package string-inflection
+  )
 
 ;; yasnippet   (setup from https://www.reddit.com/r/emacs/comments/9bvawd/use_yasnippet_via_usepackage/)
+;; default is to put personal snippets in emacs.d/snippets
 (use-package yasnippet
   :ensure t
   :config
@@ -177,6 +205,41 @@
     :ensure t)
   (yas-global-mode t)
   (yas-reload-all)
+  )
+
+
+;; set up auto-insert-mode to use yasnippet for file templates
+(defun autoinsert-yas-expand()
+  "Replace text in yasnippet template."
+  (yas-expand-snippet (buffer-string) (point-min) (point-max))
+  (clang-format (point-min) (point-max) "Google") ;; maybe fix this so we dont need it here
+  )
+
+;; this could probably be done smarter
+(defun taylor-get-header-file-include-path()
+  "Helper function for yasnippet include line in c++ template"
+  (concat (file-name-sans-extension (string-join (nthcdr 4 (split-string (buffer-file-name) "/")) "/")) ".hh")
+  )
+
+(use-package autoinsert
+  :init
+  ;; (setq auto-insert-query nil)
+  (setq auto-insert-directory (locate-user-emacs-file "templates"))
+  (add-hook 'find-file-hook 'auto-insert)
+  (auto-insert-mode 1)
+  :config
+  ;; C++ program 
+  (define-auto-insert '("\\.\\(C\\|cc\\|cpp\\|cxx\\|c\\+\\+\\)\\'" . "C++")
+    ["template.cc" autoinsert-yas-expand])
+  ;; C++ header
+  (define-auto-insert '("\\.\\(H\\|hh\\|hpp\\|hxx\\|h\\+\\+\\)\\'" . "C++ Header")
+    ["template.hh" autoinsert-yas-expand])
+  ;; python
+  (define-auto-insert 'python-mode
+    ["template.py" autoinsert-yas-expand])
+  ;; Bazel. Note this overrides python-mode
+  (define-auto-insert '("BUILD$" . "Bazel Build")
+    ["template.BUILD" autoinsert-yas-expand])
   )
 
 
@@ -231,10 +294,7 @@
 
 
 ;; bazel stuff
-(setq auto-mode-alist
-      (append '(("BUILD" . python-mode))
-              auto-mode-alist))
-
+(add-to-list 'auto-mode-alist '("BUILD" . python-mode))
 
 
 ;;; init.el ends here
