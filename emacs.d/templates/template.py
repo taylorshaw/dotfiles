@@ -1,10 +1,16 @@
-# Copyright Aurora Innovation, Inc., `(format-time-string "%Y")`, All rights reserved.
-
+# Aurora Innovation, Inc. Proprietary and Confidential. Copyright `(format-time-string "%Y")`.
 """
 ${1:'Docs'}
 """
 
-$0
+import sys
 
+
+def main(argv=()):
+    $0
+
+
+    
 if __name__ == '__main__':
-    print('Hello World!')
+    main(argv=sys.argv[1:])
+

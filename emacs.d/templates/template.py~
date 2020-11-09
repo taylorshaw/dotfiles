@@ -1,0 +1,12 @@
+# Copyright Aurora Innovation, Inc., `(format-time-string "%Y")`, All rights reserved.
+
+"""
+${1}
+"""
+
+def main():
+    $0
+    
+
+if __name__ == '__main__':
+    main()

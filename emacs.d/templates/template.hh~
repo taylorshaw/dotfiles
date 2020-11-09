@@ -1,0 +1,12 @@
+// Copyright Aurora Innovation, Inc., 2018, All rights reserved.
+
+#pragma once
+
+namespace av {
+namespace thing {
+namespace thing2 {
+
+
+} // namespace thing2
+} // namespace thing
+} // namespace av

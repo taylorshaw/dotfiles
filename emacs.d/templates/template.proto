@@ -1,0 +1,11 @@
+// Aurora Innovation, Inc. Proprietary and Confidential. Copyright `(format-time-string "%Y")`.
+
+syntax = "proto2";
+
+package av.${1:`(car (last (split-string (file-name-directory (buffer-file-name)) "/") 3))`}.${2:`(car (last (split-string (file-name-directory (buffer-file-name)) "/") 2))`}.proto;
+
+message ${3:`(string-inflection-pascal-case-function (file-name-nondirectory (file-name-sans-extension (buffer-file-name))))`}{
+    // some stuff
+    optional string ${0:name} = 1;
+    
+}

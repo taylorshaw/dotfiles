@@ -1,0 +1,67 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Fri May 24 10:01:59 2019
+;; Desktop file format version 208
+;; Emacs version 26.1
+
+;; Global section:
+(setq desktop-saved-frameset [frameset 1 (23784 9095 474073 138000) (desktop . "208") "tshaw@tshaw-asus" nil nil ((((minibuffer . t) (undecorated) (override-redirect) (font-backend xft x) (font . "-DAMA-Ubuntu Mono-normal-normal-normal-*-17-*-*-*-m-0-iso10646-1") (font-parameter . "Ubuntu Mono 13") (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars . right) (horizontal-scroll-bars) (foreground-color . "white") (background-color . "black") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (no-special-glyphs) (scroll-bar-foreground) (scroll-bar-background) (menu-bar-lines . 1) (tool-bar-lines . 0) (title) (wait-for-wm . t) (tool-bar-position . top) (inhibit-double-buffering) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 10) (scroll-bar-height . 0) (alpha) (no-focus-on-map) (no-accept-focus) (fullscreen) (visibility . t) (skip-taskbar) (z-group) (display-type . color) (background-mode . dark) (cursor-color . "white") (sticky) (frameset--id . "14C5-3696-9C56-AA8A") (frameset--mini t) (height . 65) (width . 80) (modeline . t) (unsplittable) (left . 1667) (top . 109) (icon-name) (display . ":0") (explicit-name)) ((min-height . 4) (min-width . 10) (min-height-ignore . 3) (min-width-ignore . 5) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 68) (min-pixel-width . 90) (min-pixel-height-ignore . 51) (min-pixel-width-ignore . 45) (min-pixel-height-safe . 17) (min-pixel-width-safe . 18)) leaf (pixel-width . 746) (pixel-height . 1088) (total-width . 82) (total-height . 64) (normal-height . 1.0) (normal-width . 1.0) (buffer "change_set.hh" (selected) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars nil 2 t nil 0 t) (vscroll . 0) (dedicated) (point . 1) (start . 1))) (((minibuffer . t) (undecorated) (override-redirect) (font-backend xft x) (font . "-DAMA-Ubuntu Mono-normal-normal-normal-*-17-*-*-*-m-0-iso10646-1") (font-parameter . "Ubuntu Mono 13") (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars . right) (horizontal-scroll-bars) (foreground-color . "white") (background-color . "black") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (no-special-glyphs) (scroll-bar-foreground) (scroll-bar-background) (menu-bar-lines . 1) (tool-bar-lines . 0) (title) (wait-for-wm . t) (tool-bar-position . top) (inhibit-double-buffering) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 10) (scroll-bar-height . 0) (alpha) (no-focus-on-map) (no-accept-focus) (fullscreen) (visibility . t) (skip-taskbar) (z-group) (display-type . color) (background-mode . dark) (cursor-color . "white") (sticky) (frameset--id . "3934-7F7D-1AB5-491D") (frameset--mini t) (height . 65) (width . 80) (modeline . t) (unsplittable) (left . 902) (top . 107) (icon-name) (display . ":0") (explicit-name)) ((min-height . 4) (min-width . 10) (min-height-ignore . 3) (min-width-ignore . 5) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 68) (min-pixel-width . 90) (min-pixel-height-ignore . 51) (min-pixel-width-ignore . 45) (min-pixel-height-safe . 17) (min-pixel-width-safe . 18)) leaf (pixel-width . 746) (pixel-height . 1088) (total-width . 82) (total-height . 64) (normal-height . 1.0) (normal-width . 1.0) (buffer "commit.cc" (selected . t) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars nil 2 t nil 0 t) (vscroll . 0) (dedicated) (point . 1) (start . 1))) (((minibuffer . t) (undecorated) (override-redirect) (font-backend xft x) (font . "-DAMA-Ubuntu Mono-normal-normal-normal-*-17-*-*-*-m-0-iso10646-1") (font-parameter . "Ubuntu Mono 13") (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars . right) (horizontal-scroll-bars) (foreground-color . "white") (background-color . "black") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (no-special-glyphs) (scroll-bar-foreground) (scroll-bar-background) (menu-bar-lines . 1) (tool-bar-lines . 0) (title) (wait-for-wm . t) (tool-bar-position . top) (inhibit-double-buffering) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 10) (scroll-bar-height . 0) (alpha) (no-focus-on-map) (no-accept-focus) (fullscreen) (visibility . t) (skip-taskbar) (z-group) (environment "_=/usr/local/bin/emacsclient" "OLDPWD=/home/tshaw/.emacs.d/auto-save-list" "XAUTHORITY=/home/tshaw/.Xauthority" "LESSCLOSE=/usr/bin/lesspipe %s %s" "GTK_IM_MODULE=ibus" "XDG_CURRENT_DESKTOP=Unity" "DISPLAY=:0" "XDG_RUNTIME_DIR=/run/user/1001" "INSTANCE=" "LESSOPEN=| /usr/bin/lesspipe %s" "DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-4gUAaZksfB" "XDG_DATA_DIRS=/usr/share/ubuntu:/usr/share/gnome:/opt/aurora/share:/usr/local/share:/usr/share" "QT4_IM_MODULE=xim" "VISUAL=/usr/local/bin/emacs" "LOGNAME=tshaw" "XDG_SESSION_DESKTOP=ubuntu" "GNOME_DESKTOP_SESSION_ID=this-is-deprecated" "LANGUAGE=en_US" "SHLVL=1" "HOME=/home/tshaw" "XDG_SEAT=seat0" "GTK2_MODULES=overlay-scrollbar" "SESSIONTYPE=gnome-session" "GDMSESSION=ubuntu" "COMPIZ_CONFIG_PROFILE=ubuntu" "IM_CONFIG_PHASE=1" "MANDATORY_PATH=/usr/share/gconf/ubuntu.mandatory.path" "GDM_LANG=en_US" "LANG=en_US.UTF-8" "GNOME_KEYRING_PID=" "EDITOR=/usr/local/bin/emacs" "XMODIFIERS=@im=ibus" "PWD=/home/tshaw/av" "JOB=dbus" "XDG_SESSION_TYPE=x11" "QT_QPA_PLATFORMTHEME=appmenu-qt5" "QT_IM_MODULE=ibus" "DESKTOP_SESSION=ubuntu" "PATH=/home/tshaw/bin:/home/tshaw/.local/bin:/opt/OpenPrinting-Gutenprint/sbin:/opt/OpenPrinting-Gutenprint/bin:/opt/aurora/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games" "XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/usr/share/upstart/xdg:/etc/xdg" "PAGER=/usr/bin/less" "DEFAULTS_PATH=/usr/share/gconf/ubuntu.default.path" "SESSION_MANAGER=local/tshaw-asus:@/tmp/.ICE-unix/2978,unix/tshaw-asus:/tmp/.ICE-unix/2978" "SSH_AUTH_SOCK=/run/user/1001/keyring/ssh" "XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0" "XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0" "QT_ACCESSIBILITY=1" "LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:" "USER=tshaw" "GTK_MODULES=gail:atk-bridge:unity-gtk-module" "GNOME_KEYRING_CONTROL=" "UPSTART_SESSION=unix:abstract=/com/ubuntu/upstart-session/1001/2716" "WINDOWID=94371850" "QT_LINUX_ACCESSIBILITY_ALWAYS_ON=1" "VTE_VERSION=4205" "XDG_MENU_PREFIX=gnome-" "SHELL=/bin/bash" "TERM=xterm-256color" "GPG_AGENT_INFO=/home/tshaw/.gnupg/S.gpg-agent:0:1" "SESSION=ubuntu" "XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/tshaw" "CLUTTER_IM_MODULE=xim" "XDG_SESSION_ID=c2" "MANPATH=/opt/OpenPrinting-Gutenprint/man:/opt/OpenPrinting-Gutenprint/man:/usr/local/man:/usr/local/share/man:/usr/share/man" "XDG_VTNR=7") (display-type . color) (background-mode . dark) (cursor-color . "white") (sticky) (frameset--id . "DDC2-9774-AD20-76AA") (frameset--mini t . t) (height . 65) (width . 80) (modeline . t) (unsplittable) (left . 136) (top . 106) (icon-name) (display . ":0") (explicit-name)) ((min-height . 4) (min-width . 10) (min-height-ignore . 3) (min-width-ignore . 5) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 68) (min-pixel-width . 90) (min-pixel-height-ignore . 51) (min-pixel-width-ignore . 45) (min-pixel-height-safe . 17) (min-pixel-width-safe . 18)) leaf (pixel-width . 746) (pixel-height . 1088) (total-width . 82) (total-height . 64) (normal-height . 1.0) (normal-width . 1.0) (buffer "asset_library.hh" (selected) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars nil 2 t nil 0 t) (vscroll . 0) (dedicated) (point . 1) (start . 1))) (((minibuffer . t) (tool-bar-lines . 0) (vertical-scroll-bars) (foreground-color . "white") (background-color . "black") (display-type . mono) (background-mode . dark) (cursor-color . "white") (font . "tty") (height . 9) (width . 10) (modeline . t) (unsplittable) (menu-bar-lines . 1) (frameset--id . "206C-17A7-2E08-84D8") (frameset--mini t)) ((min-height . 4) (min-width . 10) (min-height-ignore . 3) (min-width-ignore . 2) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 4) (min-pixel-width . 10) (min-pixel-height-ignore . 3) (min-pixel-width-ignore . 2) (min-pixel-height-safe . 1) (min-pixel-width-safe . 2)) leaf (pixel-width . 10) (pixel-height . 8) (total-width . 10) (total-height . 8) (normal-height . 1.0) (normal-width . 1.0) (buffer "*scratch*" (selected) (hscroll . 0) (fringes 0 0 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 146) (start . 1))))])
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring nil)
+(setq regexp-search-ring nil)
+(setq register-alist nil)
+(setq file-name-history '("~/.emacs.d/" "~/.emacs.d" "~/av/simulation/assetlib/asset_library.hh" "~/av/simulation/assetlib/commit.cc" "~/av/simulation/assetlib/commit.hh" "/home/tshaw/av/simulation/assetlib/change_set.hh" "~/av/simulation/assetlib/sqlite_database.cc" "~/av/simulation/assetlib/commit.hh" "~/av/simulation/assetlib/commit.cc" "/home/tshaw/av/simulation/assetlib/asset_library.hh"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 208
+  "/home/tshaw/av/simulation/assetlib/commit.cc"
+  "commit.cc"
+  'c++-mode
+  '(abbrev-mode override-global-mode flycheck-mode yas-minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 23784 9093 987595 419000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/tshaw/av/simulation/assetlib/change_set.hh"
+  "change_set.hh"
+  'c++-mode
+  '(abbrev-mode override-global-mode flycheck-mode yas-minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 23784 9021 73051 146000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/tshaw/av/simulation/assetlib/asset_library.hh"
+  "asset_library.hh"
+  'c++-mode
+  '(abbrev-mode override-global-mode flycheck-mode yas-minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 23784 9071 546846 628000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/tshaw/av/simulation/assetlib/commit.hh"
+  "commit.hh"
+  'c++-mode
+  '(abbrev-mode override-global-mode flycheck-mode yas-minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 23784 9018 34126 48000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+

@@ -1,15 +1,15 @@
-;;; emacs.el --- Taylor's personal emacs init.el
+;;; emacs.el-- - Taylor's personal emacs.el
 
-;;; Commentary:
+;;;Commentary:
 
 ;; to get a list of available packages, use M-x package-list-packages
 ;; i marks package to install, u unmarks, x runs the install
 ;; to get all key bindings for the mode, do C-h m
 
-;; to enter Emacs customization interface, do M-x customize
-;; to read about an Emacs variable do C-h v <variable name>
+;; to enter emacs customization interface, do M-x customize
+;; to read about an emacs variable do C-h v <variable name>
 
-;; articles ive read about Emacs customization:
+;; articles ive read about emacs customization:
 ;; https://blog.aaronbieber.com/2015/07/05/a-gentle-introduction-to-emacs-configuration.html
 ;; https://github.com/caiorss/Emacs-Elisp-Programming/blob/master/README.org
 
@@ -18,35 +18,9 @@
 ;; https://emacs-doctor.com/emacs-strip-tease.html
 ;; https://github.com/ClintLiddick/dotfiles/blob/master/emacs.el (clint from aurora's dotfiles)
 
-;; TODO
-
-;; set up helm ?
-;; set up projectile ?
-;; set up yasnippet ?  maybe integrate with helm and ido?
-;; auto-complete https://github.com/auto-complete/auto-complete
-;; https://www.emacswiki.org/emacs/HippieExpand
-;; magit
-;; rtags/ycmd
-;; better clang-format
-
-;; try Emacs prelude, spacemacs etc
-;; evil-mode
-
-;; http://pchristensen.com/blog/articles/finding-things-fast-in-emacs/
-;; https://github.com/eglaysher/find-things-fast/blob/master/README.md
-
-
-;; Something to automatically put copyright at top of all new code files
-
-;; Try using desktop-save-mode to restore buffers and window configuration
-;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Saving-Emacs-Sessions.html
-
-;; flymake mode
-
-
-;; also, can switch this file to org mode for built-in documentation
-
-
+;; TODO set up helm ?
+;; TODO set up projectile ?
+;; TODO set up yasnippet ?
 
 ;;; Code:
 
@@ -62,13 +36,6 @@
 ;; maybe move this to emacs.d ? (expand-file-name "custom.el" user-emacs-directory)
 (setq custom-file "~/.emacs-custom.el")
 (load custom-file)
-
-;; location for custom themes ive downloaded
-(add-to-list 'custom-theme-load-path (expand-file-name "~/.emacs.d/themes/"))
-(add-to-list 'custom-theme-load-path (expand-file-name "~/src/emacs-color-theme-solarized"))
-
-;; put emacs files I download outside of package manager in .emacs.d/lisp
-(add-to-list 'load-path "~/.emacs.d/lisp")
 
 ;; add some additional package repositories
 ;; this is taken from vim-to-emacs in 14 days
@@ -129,7 +96,7 @@
     (use-package flycheck-rust)
 )
 
-;; C++ auto-formatting  XXX TODO
+;; C++ auto-formatting
 ;; XXX should set up the keybindings only for certain modes (c++-mode, c-mode, glsl-mode)
 (use-package clang-format
   :config
@@ -138,17 +105,9 @@
 ;;  (add-hook 'c-mode-common-hook
 ;;	    (function (lambda ()
 ;;			(add-hook 'before-save-hook
-  ;;				  'clang-format-buffer))))
+;;				  'clang-format-buffer))))
   )
 
-;; fill column indicator
-(use-package fill-column-indicator
-  :config
-  (setq fci-rule-use-dashes t)
-  (setq fci-dash-pattern 0.25)
-  (setq fci-rule-color "dim gray") 
-  )
-(setq fill-column 80)
 
 ;; ace-window
 (use-package ace-window
@@ -209,11 +168,8 @@
   ;;(sublimity-map-set-delay 5)
 ;;  )
 
-(use-package string-inflection
-  )
 
 ;; yasnippet   (setup from https://www.reddit.com/r/emacs/comments/9bvawd/use_yasnippet_via_usepackage/)
-;; default is to put personal snippets in emacs.d/snippets
 (use-package yasnippet
   :ensure t
   :config
@@ -221,50 +177,6 @@
     :ensure t)
   (yas-global-mode t)
   (yas-reload-all)
-  )
-
-
-;; set up auto-insert-mode to use yasnippet for file templates
-(defun autoinsert-yas-expand()
-  "Replace text in yasnippet template."
-  (yas-expand-snippet (buffer-string) (point-min) (point-max))
-  ;; (clang-format (point-min) (point-max) "Google") ;; maybe fix this so we dont need it here
-  )
-
-(defun autoinsert-yas-expand-cpp()
-  "Replace text in yasnippet template."
-  (yas-expand-snippet (buffer-string) (point-min) (point-max))
-  (clang-format (point-min) (point-max) "Google") ;; maybe fix this so we dont need it here
-  )
-
-;; this could probably be done smarter
-(defun taylor-get-header-file-include-path()
-  "Helper function for yasnippet include line in c++ template"
-  (concat (file-name-sans-extension (string-join (nthcdr 4 (split-string (buffer-file-name) "/")) "/")) ".hh")
-  )
-
-(use-package autoinsert
-  :init
-  ;; (setq auto-insert-query nil)
-  (setq auto-insert-directory (locate-user-emacs-file "templates"))
-  (add-hook 'find-file-hook 'auto-insert)
-  (auto-insert-mode 1)
-  :config
-  ;; C++ program 
-  (define-auto-insert '("\\.\\(C\\|cc\\|cpp\\|cxx\\|c\\+\\+\\)\\'" . "C++")
-    ["template.cc" autoinsert-yas-expand-cpp])
-  ;; C++ header
-  (define-auto-insert '("\\.\\(H\\|hh\\|hpp\\|hxx\\|h\\+\\+\\)\\'" . "C++ Header")
-    ["template.hh" autoinsert-yas-expand-cpp])
-  ;; python
-  (define-auto-insert 'python-mode
-    ["template.py" autoinsert-yas-expand])
-  ;; protobuf
-  (define-auto-insert '("\\.proto\\'" . "Protobuf")
-    ["template.proto" autoinsert-yas-expand])
-  ;; Bazel. Note this overrides python-mode
-  (define-auto-insert '("BUILD$" . "Bazel Build")
-    ["template.BUILD" autoinsert-yas-expand])
   )
 
 
@@ -278,32 +190,21 @@
 (setq initial-frame-alist '((width . 80) (height . 60) ))
 
 ;; parens
-(setq visible-bell nil) ;; no bell. set to t to see visible bell but no beep
+(setq visible-bell t) ;; no bell
 (setq blink-matching-paren t)
 (setq paren-ding-unmatched t)
 
 (setq indicate-empty-lines t)
 
 ;; indentation
-;; also look at googles c style guide: https://github.com/google/styleguide/blob/gh-pages/google-c-style.el
-(setq-default indent-tabs-mode nil) ;; use spaces rather than tabs
+(setq-default indent-tabs-mode nil)
 (setq tab-width 4)
 (setq c-basic-offset tab-width)
-;;(setq c-default-style "linux")
-(c-add-style "taylor-c-style"
-             '("linux"
-               (c-basic-offset . tab-width)
-               (c-offsets-alist
-                (innamespace . 0)
-                (access-label . -3)
-                )))
-(setq c-default-style "taylor-c-style")
-
-
+(setq c-default-style "linux")
 ;;(setq cperl-indent-level tab-width)
 ;;(setq lua-indent-level 2)
 
-;; show current function in modeline
+;; show current functon in modeline
 (which-function-mode)
 (setq which-func-unknown "")
 (setq-default header-line-format
@@ -317,8 +218,6 @@
 ;; TODO try to get c comments to be /* */ blocks ?
 (global-set-key (kbd "C-;") 'comment-or-uncomment-region) 
 
-;; goto line just single M-g
-(global-set-key (kbd "M-g") 'goto-line)
 
 ;; compile key
 (global-set-key [f12] 'compile)
@@ -332,51 +231,10 @@
 
 
 ;; bazel stuff
-(add-to-list 'auto-mode-alist '("BUILD" . python-mode))
-(add-to-list 'auto-mode-alist '("WORKSPACE" . python-mode))
+(setq auto-mode-alist
+      (append '(("BUILD" . python-mode))
+              auto-mode-alist))
 
 
 
-;; store all backup and autosave files in tmp dir to get them out of the way
-;; /var/tmp is more persistent than /tmp, which is flushed on boot
-;; https://github.com/zpinter/emacs.d/blob/master/pre-cask-config.el#L141-L150
-
-;; if file names end up getting to be too long, should look at:
-;; https://emacs.stackexchange.com/questions/35762/keep-auto-save-files-out-of-directory
- 
-(defconst emacs-tmp-dir (format "/var/tmp/%s-%s/" "emacs-auto-save" (user-uid)))
-
-(unless (file-directory-p emacs-tmp-dir)
-  (make-directory emacs-tmp-dir))
-
-(setq backup-directory-alist
-      `((".*" . ,emacs-tmp-dir)))
-
-(setq undo-history-directory-alist
-      `((".*" . ,emacs-tmp-dir)))
-
-(setq auto-save-file-name-transforms
-      `((".*" ,emacs-tmp-dir t)))
-
-(setq auto-save-list-file-prefix
-      emacs-tmp-dir)
-
-;; disable .#foo style symlinks
-;; (setq create-lockfiles nil)
-
-
-;; framemove for moving between frames
-;; downloaded from https://www.emacswiki.org/emacs/FrameMove
-(require 'framemove)
-(global-set-key (kbd "C-M-<left>") 'windmove-left)
-(global-set-key (kbd "C-M-<right>") 'windmove-right)
-(global-set-key (kbd "C-M-<up>") 'windmove-up)
-(global-set-key (kbd "C-M-<down>") 'windmove-down)
-(setq framemove-hook-into-windmove t)
-
-(use-package cl) ;; needed by framemove
-
-
-;; desktop save mode for restoring workspaces
-;; (desktop-save-mode 1)
-;;; init.el ends here
+;;; emacs.el ends here

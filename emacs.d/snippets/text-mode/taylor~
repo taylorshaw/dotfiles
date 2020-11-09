@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: taylor
+# key: taylor
+# --
+Taylor is "${1:great$(upcase yas-text)}"
+
+The string is ${1}

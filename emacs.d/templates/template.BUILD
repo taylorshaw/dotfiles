@@ -1,2 +1,2 @@
-# Copyright Aurora Innovation, Inc., `(format-time-string "%Y")`, All rights reserved.
+# Aurora Innovation, Inc. Proprietary and Confidential. Copyright `(format-time-string "%Y")`.
 

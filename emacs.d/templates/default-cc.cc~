@@ -1,0 +1,8 @@
+
+#include <fonk>
+
+class Thing(${1}, ${2}){
+
+    $0
+
+};

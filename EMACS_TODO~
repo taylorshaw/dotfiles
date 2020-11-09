@@ -1,0 +1,15 @@
+magit
+projectile
+
+rtags / ycmd
+
+try emacs prelude, spacemacs etc
+evil-mode
+
+http://pchristensen.com/blog/articles/finding-things-fast-in-emacs/
+https://github.com/eglaysher/find-things-fast/blob/master/README.md
+
+
+`;; Use python mode for BUILD files.`
+`(add-to-list 'auto-mode-alist '("BUILD" . python-mode))`
+
