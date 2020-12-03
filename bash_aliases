@@ -54,6 +54,10 @@ alias log_dump='~/av/bazel-bin/common/logging/log_dump --summary_only --log_id '
 #alias assetlib='bazel run //simulation/assetlib/cli:assetlib -- '
 source ~/av/simulation/assetlib/cli/bash_completion.sh
 
+# AWS Stuff
+export AWS_SDK_LOAD_CONFIG=1
+
+
 # things ive installed
 # xxdiff
 # kdiff3
