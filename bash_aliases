@@ -94,6 +94,20 @@ export AWS_SDK_LOAD_CONFIG=1
 # or zenity, or xmessage
 
 
+# Aurora stuff
+
+# perception's aliases
+source ~/av/perception/perception.aliases
+
+# davis' git tools tab completion
+source ~/av/tools/git/move_branch_bash_tab_completion.sh
+
+# curator
+alias curator="~/av/bazel-bin/simulation/cloud/curator/cmd/curator"
+
+# added 08/31/20 (for opencue stuff maybe?) 
+export SETUPTOOLS_USE_DISTUTILS=stdlib
+
 
 # testing
 full_test() {
@@ -115,9 +129,11 @@ full_test() {
 # take off fast to force rebuilding all docs (makes navigation work correctly)
 
 # open daily TODO
-xe ~/TODO
+# xe ~/TODO
 
 
 # testing
 export AV="/home/tshaw/av"
 export PYTHONPATH=$AV/bazel-bin:$AV/bazel-genfiles:$AV/bazel-av:$AV
+
+
