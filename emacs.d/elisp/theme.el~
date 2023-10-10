@@ -1,0 +1,8 @@
+;;; theme.el --- Theme-related stuff
+;;; Commentary:
+
+;;; Code:
+
+;; (load-theme 'taylor_orig_theme t)
+
+;;; theme.el ends here

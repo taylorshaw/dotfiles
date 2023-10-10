@@ -1,0 +1,41 @@
+[user]
+	email = tshaw@aurora.tech
+	name = Taylor Shaw
+[core]
+        editor = emacs -nw
+; diff and merge stuff explained here:
+; https://stackoverflow.com/questions/34119866/setting-up-and-using-meld-as-your-git-difftool-and-mergetool
+[diff]
+        tool = meld
+[difftool]
+        prompt = false
+[difftool "meld"]
+    cmd = meld "$LOCAL" "$REMOTE"
+[merge]
+        tool = meld
+[mergetool "meld"]
+    # Choose one of these 2 lines (not both!)
+    # 'base' version displays original file without merge conflict info
+    cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
+    # cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
+[branch]
+        ; set branch's upstream automatically when created
+        autosetupmerge = always
+        ; turned this off when moving to github
+        ; autosetuprebase = always
+[alias]
+	graph = log --pretty=format:\"%w(78,0,22)%C(yellow)%h (%cr)%C(auto)%d%Creset %s%C(blue) -%aN%C(reset)\" --graph --all
+        graphsingle = log --pretty=format:\"%w(78,0,22)%C(yellow)%h (%cr)%C(auto)%d%Creset %s%C(blue) -%aN%C(reset)\" --graph
+        ; removed these when moving to github
+        ;land = !~/av/tools/git/safe_land
+        ;flow = !~/av/tools/git/flow
+        ;move-branch = !~/av/tools/git/move_branch
+        br = !~/av/tools/git/branch_tree
+	patch = "!f() { git fetch origin pull/$1/head:pr/$1-$2 && git checkout pr/$1-$2 && git branch -u master; }; f"
+        ;squash = !~/av/tools/git/squash_branch
+        ;bd = diff @{upstream}...
+        ; Show the most recent branches I've been on.
+        ; Copied from http://ses4j.github.io/2020/04/01/git-alias-recent-branches/
+        lb = !git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep --color=NEVER 'checkout:' | grep --color=NEVER -oE '[^ ]+ ~ .*' | awk -F~ '!seen[$1]++' | awk -F' ~ HEAD@{' '{printf(\"%-14s - %s\\n\", substr($2, 1, length($2)-1), $1)}'
+[fetch]
+	prune = true

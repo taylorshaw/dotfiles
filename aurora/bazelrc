@@ -1,0 +1,20 @@
+# build --config=away
+# build --config=intel-cuda # XXX put this back
+# build --strip=never
+build --local_ram_resources=HOST_RAM*.75 # dont use all ram
+build --local_cpu_resources=HOST_CPUS-4 # leave some cpus free
+build -j 7 #5
+#build --ram_utilization_factor=75 # dont use all ram (old)
+#build -j 10 # leave some cpus free (old)
+
+build --disk_cache=~/.cache/bazel # XXX turn back on
+
+# stuff for using the remote cache on vpn
+#build --config=remote
+#build --keep_going
+#build --experimental_spawn_scheduler
+#build --remote_timeout=3m
+# trying michael knight suggestion to increase build cache memory
+build --jvmopt=-XX:MaxRAMPercentage=40
+# build --config=python_next # remove after 7/18/22
+# run --config=houdini

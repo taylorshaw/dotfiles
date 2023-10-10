@@ -1,89 +1,24 @@
-;;; emacs.el --- Taylor's personal emacs init.el
-
+;;; base.el --- Base emacs configuration
 ;;; Commentary:
-
-;; to get a list of available packages, use M-x package-list-packages
-;; i marks package to install, u unmarks, x runs the install
-;; to get all key bindings for the mode, do C-h m
-
-;; to enter Emacs customization interface, do M-x customize
-;; to read about an Emacs variable do C-h v <variable name>
-
-;; articles ive read about Emacs customization:
-;; https://blog.aaronbieber.com/2015/07/05/a-gentle-introduction-to-emacs-configuration.html
-;; https://github.com/caiorss/Emacs-Elisp-Programming/blob/master/README.org
-;; https://alpha2phi.medium.com/emacs-beginner-configuration-9578dbe71d03
-
-;; places I've copied stuff from:
-;; https://blog.aaronbieber.com/2015/05/24/from-vim-to-emacs-in-fourteen-days.html
-;; https://emacs-doctor.com/emacs-strip-tease.html
-;; https://github.com/ClintLiddick/dotfiles/blob/master/emacs.el (clint from aurora's dotfiles)
-
-;; TODO
-
-;; set up helm ?
-;; set up projectile ?
-;; set up yasnippet ?  maybe integrate with helm and ido?
-;; auto-complete https://github.com/auto-complete/auto-complete
-;; https://www.emacswiki.org/emacs/HippieExpand
-;; magit
-;; rtags/ycmd
-;; better clang-format
-
-;; try Emacs prelude, spacemacs etc
-;; evil-mode
-
-;; http://pchristensen.com/blog/articles/finding-things-fast-in-emacs/
-;; https://github.com/eglaysher/find-things-fast/blob/master/README.md
-
-
-;; Try using desktop-save-mode to restore buffers and window configuration
-;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Saving-Emacs-Sessions.html
-
-;; flymake mode
-
-
-;; also, can switch this file to org mode for built-in documentation
-
-
 
 ;;; Code:
 
-;; Path to my elisp config files
-(add-to-list 'load-path (concat user-emacs-directory "elisp"))
-
-;; Base configuration
-(require 'base)
-
-;; Load Theme
-(require 'theme)
-
-;; Completion
-(require 'completion)
-
-;; Magit
-(require 'version_control)
-
-;; Template
-(require 'template)
-
-
-;; ;; do these early to aviod momentary display
-;; (if (fboundp 'tool-bar-mode) (tool-bar-mode -1)) ;; no tool bar
-;; ;;(if (fboundp 'menu-bar-mode) (menu-bar-mode 0)) ;; no menu bar
-;; (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1)) ;; no scroll bar
-;; (setq inhibit-startup-screen t) ;; no startup screen
+;; do these early to aviod momentary display
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1)) ;; no tool bar
+;;(if (fboundp 'menu-bar-mode) (menu-bar-mode 0)) ;; no menu bar
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1)) ;; no scroll bar
+(setq inhibit-startup-screen t) ;; no startup screen
 
 
 
-;; ;; don't put custom-set-variables in emacs.el
-;; ;; maybe move this to emacs.d ? (expand-file-name "custom.el" user-emacs-directory)
-;; (setq custom-file "~/.emacs-custom.el")
-;; (load custom-file)
+;; don't put custom-set-variables in emacs.el
+;; maybe move this to emacs.d ? (expand-file-name "custom.el" user-emacs-directory)
+(setq custom-file "~/.emacs-custom.el")
+(load custom-file)
 
-;; ;; location for custom themes ive downloaded
-;; (add-to-list 'custom-theme-load-path (expand-file-name "~/.emacs.d/themes/"))
-;; (add-to-list 'custom-theme-load-path (expand-file-name "~/src/emacs-color-theme-solarized"))
+;; location for custom themes ive downloaded
+(add-to-list 'custom-theme-load-path (expand-file-name "~/.emacs.d/themes/"))
+(add-to-list 'custom-theme-load-path (expand-file-name "~/src/emacs-color-theme-solarized"))
 
 ;; ;; put emacs files I download outside of package manager in .emacs.d/lisp
 ;; (add-to-list 'load-path "~/.emacs.d/lisp")
@@ -164,7 +99,7 @@
 ;;   :config
 ;;   (setq fci-rule-use-dashes t)
 ;;   (setq fci-dash-pattern 0.25)
-;;   (setq fci-rule-color "dim gray")
+;;   (setq fci-rule-color "dim gray") 
 ;;   )
 ;; (setq fill-column 80)
 
@@ -173,7 +108,7 @@
 ;;   :config
 ;;   (global-set-key (kbd "M-o") 'ace-window)
 ;;   )
-
+		  
 
 ;; ;; ivy general completion
 ;; ;; (use-package ivy
@@ -203,7 +138,7 @@
 ;;   (setq neo-smart-open t)
 ;;   (global-set-key [f8] 'neotree-toggle)
 ;;   )
-
+  
 
 ;; ;; minimap seems to work better than sublimity for minimap, but still doesnt
 ;; ;; work great. I think maybe try to turn on/off when scrolling?
@@ -268,7 +203,7 @@
 ;;   (add-hook 'find-file-hook 'auto-insert)
 ;;   (auto-insert-mode 1)
 ;;   :config
-;;   ;; C++ program
+;;   ;; C++ program 
 ;;   (define-auto-insert '("\\.\\(C\\|cc\\|cpp\\|cxx\\|c\\+\\+\\)\\'" . "C++")
 ;;     ["template.cc" autoinsert-yas-expand-cpp])
 ;;   ;; C++ header
@@ -333,7 +268,7 @@
 
 ;; ;; comment region
 ;; ;; TODO try to get c comments to be /* */ blocks ?
-;; (global-set-key (kbd "C-;") 'comment-or-uncomment-region)
+;; (global-set-key (kbd "C-;") 'comment-or-uncomment-region) 
 
 ;; ;; goto line just single M-g
 ;; (global-set-key (kbd "M-g") 'goto-line)
@@ -361,7 +296,7 @@
 
 ;; ;; if file names end up getting to be too long, should look at:
 ;; ;; https://emacs.stackexchange.com/questions/35762/keep-auto-save-files-out-of-directory
-
+ 
 ;; (defconst emacs-tmp-dir (format "/var/tmp/%s-%s/" "emacs-auto-save" (user-uid)))
 
 ;; (unless (file-directory-p emacs-tmp-dir)
@@ -401,4 +336,6 @@
 
 ;; ;; desktop save mode for restoring workspaces
 ;; ;; (desktop-save-mode 1)
-;;; init.el ends here
+
+(provide 'base)
+;;; base.el ends here
