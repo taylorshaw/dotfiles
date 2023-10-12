@@ -111,6 +111,7 @@ export AWS_SDK_LOAD_CONFIG=1
 # fzy (clone of fzf?)
 # ripgrep (rg.. faster grep)
 # ncdu (see what dirs take up most space)
+# gitk
 
 # downloaded pgadmin4 from source cause couldnt get apt install working. couldnt get source to work easily
 # downloaded pgweb which seems to work ok
@@ -216,9 +217,5 @@ export AV="/home/tshaw/av"
 # For cargo (rust packages)
 export PATH=$PATH:/home/tshaw/.cargo/bin
 
-
-# Temp github token made at https://github.com/settings/tokens
-export GITHUB_TOKEN=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
-
-# Temp buildkite token made at https://buildkite.com/user/api-access-tokens
-export BUILDKITE_API_TOKEN=bkua_7df249a070bc282248605d1149f3c8990bd0e90e
+# Source tokens we dont want to check into github: GITHUB_TOKEN and BUILDKITE_API_TOKEN
+source ~/.secret_tokens

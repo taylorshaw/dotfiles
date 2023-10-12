@@ -2,8 +2,8 @@
 # build --config=intel-cuda # XXX put this back
 # build --strip=never
 build --local_ram_resources=HOST_RAM*.75 # dont use all ram
-build --local_cpu_resources=HOST_CPUS-4 # leave some cpus free
-build -j 7 #5
+build --local_cpu_resources=HOST_CPUS-2 # leave some cpus free
+build -j 14 #5
 #build --ram_utilization_factor=75 # dont use all ram (old)
 #build -j 10 # leave some cpus free (old)
 
