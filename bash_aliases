@@ -219,3 +219,6 @@ export PATH=$PATH:/home/tshaw/.cargo/bin
 
 # Source tokens we dont want to check into github: GITHUB_TOKEN and BUILDKITE_API_TOKEN
 source ~/.secret_tokens
+
+# ssh to hserver machine (i copied houdini-prod.pem from lastpass)
+# ssh -i houdini-prod.pem ubuntu@houdini.lic.corp.aurora.tech ~/.secret_tokens
